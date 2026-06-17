@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-white text-gray-800;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+button {
+  @apply transition-all duration-200;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold text-gray-900;
+}
+
+h1 {
+  @apply text-4xl md:text-5xl;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl;
+}
+
+/* Code blocks */
+pre {
+  @apply bg-gray-100 p-4 rounded-lg overflow-x-auto;
+}
+
+code {
+  @apply bg-gray-100 px-2 py-1 rounded font-mono text-sm;
+}
+
+pre code {
+  @apply bg-transparent p-0;
+}
+
+/* Blockquotes */
+blockquote {
+  @apply border-l-4 border-secondary pl-4 italic text-gray-600;
+}
+
+/* Tables */
+table {
+  @apply w-full border-collapse;
+}
+
+th,
+td {
+  @apply border border-gray-300 px-4 py-2;
+}
+
+th {
+  @apply bg-gray-100;
+}
+
+/* Links */
+a {
+  @apply text-secondary hover:text-blue-600;
+}
+
+/* Skip to content link */
+.skip-to-content {
+  @apply absolute -top-12 left-0 z-50 bg-secondary text-white px-4 py-2 rounded;
+}
+
+.skip-to-content:focus {
+  @apply top-0;
+}
