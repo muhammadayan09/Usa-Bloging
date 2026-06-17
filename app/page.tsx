@@ -10,6 +10,13 @@ import { sampleCategories, samplePosts } from "@/lib/sampleData";
 
 async function getHomePageData() {
   try {
+    // If SANITY project ID is not configured (local dev), skip network calls
+    // to avoid server errors when Sanity dataset/project isn't available.
+    const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+    const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+    if (!projectId || projectId.startsWith("local") || projectId === "localdev") {
+      return { posts: samplePosts, categories: sampleCategories };
+    }
     const [posts, categories] = await Promise.all([
       sanityClient.fetch(ALL_POSTS_QUERY),
       sanityClient.fetch(ALL_CATEGORIES_QUERY),
